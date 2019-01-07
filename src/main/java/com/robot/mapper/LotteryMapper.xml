@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.robot.mapper.LotteryMapper">
+  <resultMap id="BaseResultMap" type="com.robot.pojo.Lottery">
+    <id column="PERIOD_NUM" jdbcType="INTEGER" property="periodNum" />
+    <result column="TIME" jdbcType="CHAR" property="time" />
+    <result column="RESULT" jdbcType="CHAR" property="result" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PERIOD_NUM, TIME, RESULT
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from lottery
+    where PERIOD_NUM = #{periodNum,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from lottery
+    where PERIOD_NUM = #{periodNum,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.robot.pojo.Lottery">
+    insert into lottery (PERIOD_NUM, TIME, RESULT
+      )
+    values (#{periodNum,jdbcType=INTEGER}, #{time,jdbcType=CHAR}, #{result,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.robot.pojo.Lottery">
+    insert into lottery
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="periodNum != null">
+        PERIOD_NUM,
+      </if>
+      <if test="time != null">
+        TIME,
+      </if>
+      <if test="result != null">
+        RESULT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="periodNum != null">
+        #{periodNum,jdbcType=INTEGER},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=CHAR},
+      </if>
+      <if test="result != null">
+        #{result,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.robot.pojo.Lottery">
+    update lottery
+    <set>
+      <if test="time != null">
+        TIME = #{time,jdbcType=CHAR},
+      </if>
+      <if test="result != null">
+        RESULT = #{result,jdbcType=CHAR},
+      </if>
+    </set>
+    where PERIOD_NUM = #{periodNum,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.robot.pojo.Lottery">
+    update lottery
+    set TIME = #{time,jdbcType=CHAR},
+      RESULT = #{result,jdbcType=CHAR}
+    where PERIOD_NUM = #{periodNum,jdbcType=INTEGER}
+  </update>
+</mapper>
