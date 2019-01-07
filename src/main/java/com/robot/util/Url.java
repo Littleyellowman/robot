@@ -5,6 +5,21 @@ import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ *
+ * 类功能描述：Url工具
+ *
+ * <p>
+ * 版权所有：小黄人
+ * <p>
+ * 未经小黄人许可，不得以任何方式复制或使用本程序任何部分
+ * <p>
+ *
+ * @author <a href="mailto:287627997@qq.com">287627997</a>
+ * @version WEBMAIL2.0
+ * @since 2019-1-6
+ *
+ */
 public class Url {
     public static Map<String, String> paramToMap(String paramStr) throws UnsupportedEncodingException {
         String[] params = paramStr.split("&");

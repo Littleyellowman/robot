@@ -14,6 +14,21 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.UnsupportedEncodingException;
 import java.util.Map;
 
+/**
+ *
+ * 类功能描述：用户管理
+ *
+ * <p>
+ * 版权所有：小黄人
+ * <p>
+ * 未经小黄人许可，不得以任何方式复制或使用本程序任何部分
+ * <p>
+ *
+ * @author <a href="mailto:287627997@qq.com">287627997</a>
+ * @version WEBMAIL2.0
+ * @since 2019-1-6
+ *
+ */
 @RequestMapping("")
 @Controller
 public class UserController {
@@ -34,7 +49,7 @@ public class UserController {
             e.printStackTrace();
         }
         logger.info("222222222222    " + queryParam);
-
+        //以上是测试前端传过来的参数，以下是测试后端查询数据及返回
         User userInfo = userService.selectByPrimaryKey(287627997);
         String money = String.valueOf(userInfo.getMoney());
         return money;

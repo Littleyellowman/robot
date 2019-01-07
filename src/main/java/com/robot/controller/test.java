@@ -7,6 +7,21 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
+/**
+ *
+ * 类功能描述：本地测试
+ *
+ * <p>
+ * 版权所有：小黄人
+ * <p>
+ * 未经小黄人许可，不得以任何方式复制或使用本程序任何部分
+ * <p>
+ *
+ * @author <a href="mailto:287627997@qq.com">287627997</a>
+ * @version WEBMAIL2.0
+ * @since 2019-1-6
+ *
+ */
 public class test {
 
     public static void main(String[] args) {
