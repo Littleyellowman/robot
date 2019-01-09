@@ -68,4 +68,7 @@
       RESULT = #{result,jdbcType=CHAR}
     where PERIOD_NUM = #{periodNum,jdbcType=INTEGER}
   </update>
+    <select id="getTodayLotteryList" parameterType="java.lang.Integer" resultType="Lottery">
+      select * from lottery where PERIOD_NUM like '${value}%'
+    </select>
 </mapper>

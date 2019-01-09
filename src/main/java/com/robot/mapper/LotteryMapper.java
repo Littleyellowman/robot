@@ -2,6 +2,8 @@ package com.robot.mapper;
 
 import com.robot.pojo.Lottery;
 
+import java.util.List;
+
 public interface LotteryMapper {
     int deleteByPrimaryKey(Integer periodNum);
 
@@ -14,4 +16,6 @@ public interface LotteryMapper {
     int updateByPrimaryKeySelective(Lottery record);
 
     int updateByPrimaryKey(Lottery record);
+
+    List<Lottery> getTodayLotteryList(Integer ymd);
 }

@@ -1,5 +1,8 @@
 package com.robot.controller;
 
+import com.robot.util.DateUtil;
+import org.apache.log4j.Logger;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -24,9 +27,12 @@ import java.net.URLConnection;
  */
 public class test {
 
+    private static Logger logger = Logger.getLogger(test.class);
+
     public static void main(String[] args) {
         //getURLInfo();
-        decode();
+        //decode();
+        logger.info(DateUtil.getDate("yyyyMMdd"));
     }
 
     public static void decode(){
