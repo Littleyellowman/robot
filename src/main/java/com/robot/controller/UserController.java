@@ -41,6 +41,7 @@ public class UserController {
     @RequestMapping("getUser")
     @ResponseBody
     public String getUser(HttpServletRequest request, HttpServletResponse resp){
+        resp.setCharacterEncoding("UTF-8");
         String queryArg = request.getQueryString();
         Map queryParam = null;
         try {
