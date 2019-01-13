@@ -49,10 +49,28 @@ public class UserController {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        logger.info("222222222222    " + queryParam);
+        logger.info("op<getUser> queryParam<" + queryParam +">");
         //以上是测试前端传过来的参数，以下是测试后端查询数据及返回
         User userInfo = userService.selectByPrimaryKey(287627997);
         String money = String.valueOf(userInfo.getMoney());
         return money;
     }
+
+    @RequestMapping("test")
+    @ResponseBody
+    public String test(HttpServletRequest request, HttpServletResponse resp){
+        resp.setCharacterEncoding("UTF-8");
+        String queryArg = request.getQueryString();
+        Map queryParam = null;
+        try {
+            queryParam = Url.paramToMap(queryArg);//参数转转码
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        logger.info("op<getUser> queryParam<" + queryParam +">");
+        //以上是测试前端传过来的参数，以下是测试后端查询数据及返回
+
+        return "bbbbb";
+    }
+
 }

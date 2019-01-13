@@ -23,7 +23,10 @@ public class InningServiceImpl implements InningService {
         inning.setBankerQq((Integer) cfrobotqqnum);
         inning.setGuessnum((Integer) guessnum);
         inning.setGuessnum((Integer) toplimit);
-        inningMapper.insert(inning);
+        int insertNum = inningMapper.insert(inning);
+        if (insertNum > 0) {
+            return true;
+        }
         return false;
     }
 }

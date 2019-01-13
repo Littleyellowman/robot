@@ -1,7 +1,13 @@
 package com.robot.controller;
 
+import cn.hutool.core.thread.ThreadUtil;
+import cn.hutool.core.util.RandomUtil;
+import cn.hutool.db.nosql.redis.RedisDS;
+import cn.hutool.json.JSONObject;
+import cn.hutool.json.JSONUtil;
 import com.robot.util.DateUtil;
 import org.apache.log4j.Logger;
+import redis.clients.jedis.Jedis;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,6 +15,8 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -32,7 +40,23 @@ public class test {
     public static void main(String[] args) {
         //getURLInfo();
         //decode();
-        logger.info(DateUtil.getDate("yyyyMMdd"));
+        //logger.info(DateUtil.getDate("yyyyMMdd"));
+        Jedis jedis = RedisDS.create().getJedis();
+        /*字符串*/
+        //jedis.set("user", "wen");
+        /*左边推入*/
+        //long cc = jedis.lpush("list", "b");
+        /*右边弹出*/
+        //String cc = jedis.rpop("list");
+        /*存Map数据*/
+        /*Map userInfo = new HashMap<String, String>();
+        userInfo.put("username", "wenbq");
+        userInfo.put("age", "24");
+        String cc = jedis.hmset("userinfo",userInfo);*/
+        /*删除*/
+        //long cc = jedis.del("userinfo");
+        JSONObject cc = JSONUtil.parseObj("{aa:bb}");
+        logger.info(cc.get("aa"));
     }
 
     public static void decode(){

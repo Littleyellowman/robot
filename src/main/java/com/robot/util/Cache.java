@@ -1,5 +1,6 @@
 package com.robot.util;
 
+import cn.hutool.cron.CronUtil;
 import com.robot.controller.UserController;
 import com.robot.pojo.Lottery;
 import com.robot.service.impl.LotteryServiceImpl;
@@ -54,5 +55,8 @@ public class Cache {
             logger.info("333333333    " + lottery.getTime());
         }
         logger.info("2222222222    " + maxLottery);
+
+        //启动定时任务
+        CronUtil.start();
     }
 }

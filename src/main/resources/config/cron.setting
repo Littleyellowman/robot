@@ -1,0 +1,3 @@
+# 全局定时任务
+[com.robot.task]
+Test.cc = */1 9-23 * * *

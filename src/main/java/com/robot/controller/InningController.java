@@ -20,13 +20,13 @@ public class InningController {
 
     private static Logger logger = Logger.getLogger(InningController.class);
 
-    @Autowired
-    InningService inningService;
+    /*@Autowired
+    InningService inningService;*/
 
     @RequestMapping("createInning")
     @ResponseBody
     public void createInning(HttpServletRequest request, HttpServletResponse resp) throws IOException {
-        resp.setCharacterEncoding("UTF-8");
+        /*resp.setCharacterEncoding("UTF-8");
         String queryArg = request.getQueryString();
         Map queryParam = null;
         try {
@@ -34,9 +34,12 @@ public class InningController {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        logger.info("222222222222    " + queryParam.get("cfrobotqqnum"));
+        logger.info("op<createInning> cfrobotqqnum<" + queryParam.get("cfrobotqqnum") + ">");
 
-        inningService.createInning(queryParam.get("cfrobotqqnum"), queryParam.get("guessnum"), queryParam.get("toplimit"));
-        resp.getWriter().write("您好中国hello");
+        boolean isInsert = inningService.createInning(queryParam.get("cfrobotqqnum"), queryParam.get("guessnum"), queryParam.get("toplimit"));
+        if (isInsert){
+            resp.getWriter().write("开桌成功，@文毕强的桌号是528，本桌上限100铜板，最多5个人加入！");
+        }
+        resp.getWriter().write("开桌失败，请等待！");*/
     }
 }
