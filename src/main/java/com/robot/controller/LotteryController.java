@@ -21,4 +21,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/LittleYellowMan/Lottery")
 @Controller
 public class LotteryController {
+    
 }

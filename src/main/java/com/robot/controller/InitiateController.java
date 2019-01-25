@@ -76,7 +76,8 @@ public class InitiateController {
                     response.getWriter().write("您的金币不够哦");
                     return;
                 }
-                 creat(qqNum,topLimit,guessnum,moneys,total);
+                String result= creat(qqNum,topLimit,guessnum,moneys,total);
+                response.getWriter().write(result);
 
             }else {//不存在时为新用户，需初始化信息后再操作
                 //加入新的用户信息
@@ -85,7 +86,17 @@ public class InitiateController {
                 user.put("money",1000);
                 user.put("freeze",0);
                 jedis.hmset(qqNum,user);
-                creat(qqNum,topLimit,guessnum,moneys,total);
+
+                if(Integer.parseInt(topLimit)<50){ //上限不能低于50
+                    response.getWriter().write("上限不能太低哦");
+                    return;
+                }
+                if(moneys<total){
+                    response.getWriter().write("您的金币不够哦");
+                    return;
+                }
+                String result= creat(qqNum,topLimit,guessnum,moneys,total);
+                response.getWriter().write(result);
             }
         } catch (IOException e) {
             e.printStackTrace();

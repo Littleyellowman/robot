@@ -102,8 +102,8 @@ public class LittleYellowMan {
 
 
     public static void main(String[] args)  {
-        String LittleYellowMan=getURLInfo("20190120");
-        readLine(LittleYellowMan);
+//        String LittleYellowMan=getURLInfo("20190120");
+//        readLine(LittleYellowMan);
         caijuzi();
     }
 }
