@@ -3,6 +3,7 @@ package com.robot.controller;
 import cn.hutool.core.thread.ThreadUtil;
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.db.nosql.redis.RedisDS;
+import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.robot.util.DateUtil;

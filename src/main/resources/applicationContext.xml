@@ -58,10 +58,6 @@
 
     <!--数据初始化-->
     <bean id="cache" class="com.robot.util.Cache" init-method="initData">
-        <property name="lotteryServiceImpl" ref="lotteryServiceImpl" />
     </bean>
-
-    <bean id="lotteryServiceImpl" class="com.robot.service.impl.LotteryServiceImpl"/>
-
 
 </beans>

@@ -91,8 +91,8 @@ public class LittleYellowMan {
             System.out.println(num);
             Map caijuzi=new HashMap();
             caijuzi.put("qh",qh);
-            caijuzi.put("opentime",qh);
-            caijuzi.put("num",Integer.parseInt(num));
+            caijuzi.put("opentime",opentime);
+            caijuzi.put("num",num);
             return caijuzi;
         } catch (Exception e) {
             e.printStackTrace();
@@ -102,8 +102,8 @@ public class LittleYellowMan {
 
 
     public static void main(String[] args)  {
-//        String LittleYellowMan=getURLInfo("20190120");
-//        readLine(LittleYellowMan);
+        //String LittleYellowMan=getURLInfo("20190120");
+        //readLine(LittleYellowMan);
         caijuzi();
     }
 }
